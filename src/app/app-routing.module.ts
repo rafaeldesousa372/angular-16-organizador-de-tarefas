@@ -5,14 +5,14 @@ import { TaskEditComponent } from './components/task-edit/task-edit.component';
 import { TaskCreateComponent } from '../app/components/task-create/task-create.component';
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'app-task-create' },
-    { path: 'task-create', component: TaskCreateComponent },
+    { path: '', pathMatch: 'full', redirectTo: 'task-list' },
     { path: 'task-list', component: TaskListComponent },
-    { path: 'task-e-edit/:id', component: TaskEditComponent },
+    { path: 'task-create', component: TaskCreateComponent },
+    { path: 'task-edit/:id', component: TaskEditComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class TasksRoutingModule { }
