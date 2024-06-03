@@ -24,9 +24,9 @@ export class RestApiService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  getTask(id: number): Observable<Task> {
+  getTask(id: any): Observable<Task> {
     return this.http
-      .get<Task>(this.apiURL + 'created-task/' + id)
+      .get<Task>(this.apiURL + '/created-task/' + id)
       .pipe(retry(1), catchError(this.handleError));
   }
 

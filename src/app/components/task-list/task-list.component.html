@@ -1,15 +1,15 @@
 <div class="container custom-container-2">
   <div class="no-data text-center" *ngIf="Tasks.length == 0">
-    <p>There is no task added yet!</p>
+    <p>Ops... Não há nada para exibir!</p>
     <button class="btn btn-outline-primary" routerLink="/task-create">
-      Add a new Task
+      Nova tarefa
     </button>
   </div>
   <div *ngIf="Tasks.length !== 0">
     <h3 class="mb-3 text-center">Lista de Tarefas</h3>
     <div class="col-md-12">
       <table class="table table-bordered">
-        <thead class="titles">
+        <thead class="text-center">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Título</th>
@@ -37,7 +37,7 @@
                 <span
                   class="delete cursor"
                   id="hover"
-                  (click)="deleteTask(item.id)"
+                  routerLink="/task-delete/{{ item.id }}"
                 >
                   🗑️ <span id="show" class="font"> Excluir </span>
                 </span>

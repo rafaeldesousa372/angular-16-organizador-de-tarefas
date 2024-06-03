@@ -1,11 +1,11 @@
 <div class="container custom-container w-75 p-3">
   <div class="col-md-12">
-    <h3 class="mb-3 text-center">Qual é a próxima tarefa?</h3>
+    <h3 class="mb-3 text-center">Qual será sua próxima tarefa?</h3>
     <div>
       <input
         type="text"
         [(ngModel)]="taskDetails.name"
-        class="form-control"
+        class="form-control mb-2"
         placeholder="Título"
       />
     </div>
@@ -13,7 +13,7 @@
       <input
         type="text"
         [(ngModel)]="taskDetails.description"
-        class="form-control"
+        class="form-control mb-2"
         placeholder="Descrição"
         required
       />
@@ -27,7 +27,7 @@
       />
     </div>
   </div>
-  <div class="form-group d-flex justify-content-around mt-3">
+  <div class="form-group d-flex justify-content-around mt-4">
     <button class="btn btn-success col-md-3" (click)="addTask()">
       Criar Tarefa
     </button>

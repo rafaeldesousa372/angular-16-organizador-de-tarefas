@@ -8,13 +8,15 @@ import { TaskCreateComponent } from './components/task-create/task-create.compon
 import { TaskEditComponent } from './components/task-edit/task-edit.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { FormsModule } from '@angular/forms';
+import { TaskDeleteComponent } from './components/task-delete/task-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskCreateComponent,
     TaskEditComponent,
-    TaskListComponent
+    TaskListComponent,
+    TaskDeleteComponent
   ],
   imports: [
     BrowserModule,

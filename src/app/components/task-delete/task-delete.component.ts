@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RestApiService } from 'src/app/services/rest-api.service';
 
 @Component({
-  selector: 'app-task-edit',
-  templateUrl: './task-edit.component.html',
-  styleUrls: ['./task-edit.component.css'],
+  selector: 'app-task-delete',
+  templateUrl: './task-delete.component.html',
+  styleUrls: ['./task-delete.component.css'],
 })
-export class TaskEditComponent {
+export class TaskDeleteComponent {
   id = this.actRoute.snapshot.params['id'];
   taskData: any = {};
 
@@ -18,18 +18,18 @@ export class TaskEditComponent {
   ) {}
 
   ngOnInit() {
-    this.editTask();
+    this.loadTaskDetail();
   }
 
-  editTask() {
+  loadTaskDetail() {
     this.restApi.getTask(this.id).subscribe((data: {}) => {
       this.taskData = data;
     });
   }
 
-  updateTask() {
-    if (window.confirm('Tem certeza que deseja atualizar?')) {
-      this.restApi.updateTask(this.id, this.taskData).subscribe((data) => {
+  deleteTask(id: number) {
+    if (window.confirm('Tem certeza que deseja deletar?')) {
+      this.restApi.deleteTask(id).subscribe((data) => {
         this.router.navigate(['/task-list']);
       });
     }

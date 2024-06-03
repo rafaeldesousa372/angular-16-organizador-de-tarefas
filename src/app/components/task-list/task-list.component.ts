@@ -19,15 +19,6 @@ export class TaskListComponent implements OnInit {
   loadTasks() {
     return this.restApi.getTasks().subscribe((data: {}) => {
       this.Tasks = data;
-      console.log(this.Tasks)
     });
-  }
-
-  deleteTask(id: number) {
-    if (window.confirm('Tem certeza que deseja deletar?')) {
-      this.restApi.deleteTask(id).subscribe((data) => {
-        this.loadTasks();
-      });
-    }
   }
 }

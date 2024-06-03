@@ -1,6 +1,6 @@
 <div class="container custom-container w-75 p-3">
   <div class="col-md-12">
-    <h3 class="mb-3 text-center">Atualizar Tarefa</h3>
+    <h3 class="mb-3 text-center">Exclir Tarefa</h3>
     <div>
       <input
         type="text"
@@ -28,15 +28,12 @@
 
     <div class="form-group d-flex justify-content-around mt-4">
       <button
-        class="btn btn-success col-md-3 bc-color"
-        (click)="updateTask()"
+        class="btn btn-warning col-md-3 bc-color"
+        (click)="deleteTask(id)"
       >
-        Atualizar
+        Excluir
       </button>
-      <button
-        class="btn btn-danger col-md-3 bc-color"
-        routerLink="/task-list"
-      >
+      <button class="btn btn-danger col-md-3 bc-color" routerLink="/task-list">
         Cancelar
       </button>
     </div>
