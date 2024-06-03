@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+#show {
+  display: none;
+}
+
+#hover:hover #show {
+  display: inline-flex;
+}
+
+.font {
+  font-weight: bold;
+  font-size: small;
+}
+
+.actions-column {
+  width: 170px;
+}

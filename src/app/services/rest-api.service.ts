@@ -43,7 +43,7 @@ export class RestApiService {
   updateTask(id: any, task: any): Observable<Task> {
     return this.http
       .put<Task>(
-        this.apiURL + '/task-edit/' + id,
+        this.apiURL + '/created-task/' + id,
         JSON.stringify(task),
         this.httpOptions
       )
@@ -58,15 +58,14 @@ export class RestApiService {
 
   handleError(error: any) {
     let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
-    errorMessage = error.error.message;
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
     } else {
-    // Get server-side error (manipulador de erro do servidor)
-    errorMessage = `Error Code: ${error.status}\nMessage:
-   ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     window.alert(errorMessage);
-    return throwError(() => new Error(errorMessage));
-    }
-   
+    return throwError(() => {
+      return errorMessage;
+    });
+  }
 }

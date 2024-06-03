@@ -1,4 +1,3 @@
-<p>task-list works!</p>
 <div class="container custom-container-2">
   <div class="no-data text-center" *ngIf="Tasks.length == 0">
     <p>There is no task added yet!</p>
@@ -7,29 +6,42 @@
     </button>
   </div>
   <div *ngIf="Tasks.length !== 0">
-    <h3 class="mb-3 text-center">Task List</h3>
+    <h3 class="mb-3 text-center">Lista de Tarefas</h3>
     <div class="col-md-12">
       <table class="table table-bordered">
-        <thead>
+        <thead class="titles">
           <tr>
-            <th scope="col">User Id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Action</th>
+            <th scope="col">ID</th>
+            <th scope="col">Título</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Contato</th>
+            <th scope="col" class="actions-column">Ação</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of Tasks">
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.phone }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.contact }}</td>
             <td>
-              <span class="edit" routerLink="/task-edit/{{ item.id }}"
-                >Edit</span
-              >
-              <span class="delete" (click)="deleteTask(item.id)">Delete</span>
+              <div class="d-flex justify-content-around">
+                <span
+                  class="edit cursor"
+                  id="hover"
+                  routerLink="/task-edit/{{ item.id }}"
+                >
+                  ✏️<span id="show" class="font"> Editar </span>
+                </span>
+
+                <span
+                  class="delete cursor"
+                  id="hover"
+                  (click)="deleteTask(item.id)"
+                >
+                  🗑️ <span id="show" class="font"> Excluir </span>
+                </span>
+              </div>
             </td>
           </tr>
         </tbody>

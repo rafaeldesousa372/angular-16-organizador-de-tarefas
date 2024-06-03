@@ -1,35 +1,38 @@
-<p>task-create works!</p>
-<section class="container custom-container">
+<div class="container custom-container w-75 p-3">
   <div class="col-md-12">
-    <h3 class="mb-3 text-center">Create Task</h3>
-    <div class="form-group">
+    <h3 class="mb-3 text-center">Qual é a próxima tarefa?</h3>
+    <div>
       <input
         type="text"
         [(ngModel)]="taskDetails.name"
         class="form-control"
-        placeholder="Name"
+        placeholder="Título"
       />
     </div>
-    <div class="form-group">
+    <div>
       <input
         type="text"
-        [(ngModel)]="taskDetails.email"
+        [(ngModel)]="taskDetails.description"
         class="form-control"
-        placeholder="Email"
+        placeholder="Descrição"
+        required
       />
     </div>
-    <div class="form-group">
+    <div>
       <input
         type="text"
-        [(ngModel)]="taskDetails.phone"
+        [(ngModel)]="taskDetails.contact"
         class="form-control"
-        placeholder="Phone"
+        placeholder="Contato"
       />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-success btn-lg btn-block" (click)="addTask()">
-        Create Task
-      </button>
     </div>
   </div>
-</section>
+  <div class="form-group d-flex justify-content-around mt-3">
+    <button class="btn btn-success col-md-3" (click)="addTask()">
+      Criar Tarefa
+    </button>
+    <button class="btn btn-danger col-md-3" routerLink="/task-list">
+      Cancelar
+    </button>
+  </div>
+</div>

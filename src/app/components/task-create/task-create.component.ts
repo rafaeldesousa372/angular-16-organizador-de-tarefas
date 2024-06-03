@@ -8,12 +8,12 @@ import { RestApiService } from 'src/app/services/rest-api.service';
   styleUrls: ['./task-create.component.css'],
 })
 export class TaskCreateComponent {
-  @Input() taskDetails = { name: '', email: '', phone: 0 };
+  @Input() taskDetails = { name: '', description: '', contact: '' }
 
   constructor(public restApi: RestApiService, public router: Router) {}
 
   ngOnInit() {}
-//dataTask
+
   addTask() {
     this.restApi.createTask(this.taskDetails).subscribe((data: {}) => {
       this.router.navigate(['/task-list']);

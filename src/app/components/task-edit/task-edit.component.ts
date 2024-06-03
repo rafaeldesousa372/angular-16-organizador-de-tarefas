@@ -21,10 +21,11 @@ export class TaskEditComponent {
     this.restApi.getTask(this.id).subscribe((data: {}) => {
       this.taskData = data;
     });
+    console.log(this.taskData)
   }
   
   updateTask() {
-    if (window.confirm('Are you sure, you want to update?')) {
+    if (window.confirm('Tem certeza que deseja atualizar?')) {
       this.restApi
         .updateTask(this.id, this.taskData)
         .subscribe((data) => {
