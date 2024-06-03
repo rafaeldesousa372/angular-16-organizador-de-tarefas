@@ -30,7 +30,7 @@ export class TaskEditComponent {
   updateTask() {
     if (window.confirm('Tem certeza que deseja atualizar?')) {
       this.restApi.updateTask(this.id, this.taskData).subscribe((data) => {
-        this.router.navigate(['/task-list']);
+        this.router.navigate(['/home']);
       });
     }
   }

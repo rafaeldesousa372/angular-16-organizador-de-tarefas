@@ -16,7 +16,7 @@ export class TaskCreateComponent {
 
   addTask() {
     this.restApi.createTask(this.taskDetails).subscribe((data: {}) => {
-      this.router.navigate(['/task-list']);
+      this.router.navigate(['/home']);
     });
   }
 }

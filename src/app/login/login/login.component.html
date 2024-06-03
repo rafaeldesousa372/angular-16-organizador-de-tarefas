@@ -1,0 +1,37 @@
+<p>login works!</p>
+<section class="flex-container">
+  <div class="card">
+    <h4 class="card-header">Login</h4>
+    <div class="card-body">
+      <div>
+        <form [formGroup]="form" (ngSubmit)="onClickSubmit(form.value)">
+          <input
+            type="text"
+            class="mb-2"
+            name="emailid"
+            placeholder="Insira seu e-mail"
+            formControlName="emailid"
+          />
+          <br />
+
+          <input
+            type="password"
+            class="mb-2"
+            name="passwd"
+            placeholder="Senha"
+            formControlName="passwd"
+          />
+          <br />
+
+          <input
+            type="submit"
+            [disabled]="!form.valid"
+            class="forsubmit"
+            value="Log In"
+            routerLink="/home"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

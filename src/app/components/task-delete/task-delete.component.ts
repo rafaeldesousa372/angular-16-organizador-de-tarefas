@@ -30,7 +30,7 @@ export class TaskDeleteComponent {
   deleteTask(id: number) {
     if (window.confirm('Tem certeza que deseja deletar?')) {
       this.restApi.deleteTask(id).subscribe((data) => {
-        this.router.navigate(['/task-list']);
+        this.router.navigate(['/home']);
       });
     }
   }
