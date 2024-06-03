@@ -19,4 +19,8 @@ export class LoginComponent {
       passwd: ['', Validators.required],
     });
   }
+
+  onClickSubmit(data: any) {
+    this.emailid = data.emailid;
+  }
 }

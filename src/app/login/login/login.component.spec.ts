@@ -27,4 +27,10 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should validate onClickSubmit', () => {
+    let data = 1234;
+    let test = component.onClickSubmit(data);
+    expect(test).not.toBeNull();
+  });
 });
