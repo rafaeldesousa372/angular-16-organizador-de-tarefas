@@ -15,27 +15,8 @@ export class LoginComponent {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      emailid: ['', Validators.required,],
+      emailid: ['', Validators.required],
       passwd: ['', Validators.required],
     });
   }
-  onClickSubmit(data: { emailid: any }) {
-    this.emailid = data.emailid;
-  }
-
-  // ngOnInit() {
-  //   this.formdata = new FormGroup({
-  //     emailid: new FormControl(
-  //       '',
-  //       Validators.compose([
-  //         Validators.required,
-  //         Validators.pattern('[^ @]*@[^ @]*'),
-  //       ])
-  //     ),
-  //     passwd: new FormControl(''),
-  //   });
-  // }
-  // onClickSubmit(data: { emailid: any }) {
-  //   this.emailid = data.emailid;
-  // }
 }
