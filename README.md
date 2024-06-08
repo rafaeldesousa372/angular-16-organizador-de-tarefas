@@ -1,6 +1,6 @@
 # GerenciadordeTarefas
 
-Projeto CRUD Gerenciador de Tarefas com API services usando JSON server.
+Projeto CRUD Gerenciador de Tarefas com API services consumindo JSON server.
 
 ## JSON server
 
